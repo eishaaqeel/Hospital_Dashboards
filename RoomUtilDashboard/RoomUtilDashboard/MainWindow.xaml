@@ -1,0 +1,86 @@
+﻿<Window x:Class="RoomUtilDashboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+
+        xmlns:local="clr-namespace:RoomUtilDashboard"
+        mc:Ignorable="d"
+        Title="Room Utilization Dashboard" Height="650" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="313*"/>
+            <ColumnDefinition Width="487*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="2">
+            <TabItem Header="Visual">
+                <Canvas Margin="0,0,0,270">
+                    <Label Content="Room Utilization Dashboard" Canvas.Left="280" FontSize="20"/>
+                    <Label Content="Overall Occupancy by Beds" Canvas.Left="40" Canvas.Top="30"/>
+                    <lvc:PieChart Name="overallBeds" Width="230" Height="223" Canvas.Top="61" >
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Title="Slice 1" Values="3" />
+                            <lvc:PieSeries Title="Slice 2" Values="4" />
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
+
+
+                    <Label Content="Overall Occupancy by Rooms" Canvas.Left="339" Canvas.Top="30"/>
+                    <lvc:PieChart Name="overallRooms" Width="230" Height="223" Canvas.Top="61" Canvas.Left="311" >
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Title="Slice 1" Values="3" />
+                            <lvc:PieSeries Title="Slice 2" Values="4" />
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
+
+                    <Label Content="# Discharging patients today" Canvas.Left="605" Canvas.Top="30"/>
+                    <Label Name="DischargeToday" Canvas.Left="593" Canvas.Top="50"/>
+
+                    <Label Content="Occupancy by Room Type" Canvas.Top="307" Canvas.Left="74"/>
+                    <lvc:CartesianChart  Name="overallRoomTypeChart" LegendLocation="Bottom" Canvas.Top="356" Height="223" Width="294"/>
+
+                    <Label Content="# of empty Rooms by Type" Canvas.Left="360" Canvas.Top="302"/>
+                    <lvc:PieChart Name="emptyRooms" Width="230" Height="223" Canvas.Top="339" Canvas.Left="324">
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Title="Slice 1" Values="3" />
+                            <lvc:PieSeries Title="Slice 2" Values="4" />
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
+                    <Button Content="Refresh" Click="RefreshClicked" Canvas.Left="609" Canvas.Top="505" Height="70" Width="162"/>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="Room Utilization Report">
+            <Grid>
+                
+                    <ScrollViewer HorizontalScrollBarVisibility="Visible" CanContentScroll="True" >
+                
+                    <DataGrid Name="roomGrid" AutoGenerateColumns="False" 
+                            HorizontalAlignment="Left" Margin="0,0,0,0"
+                            CanUserAddRows="False" CanUserDeleteRows="False"
+                            SelectionMode="Single" Width="613" 
+                            ScrollViewer.CanContentScroll="True" 
+                            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto" >
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="         Location          " Binding="{Binding Location}" />
+                            <DataGridTextColumn Header="         Type              " Binding="{Binding Type}" />
+                            <DataGridTextColumn Header="         Patient No        " Binding="{Binding PatientNo}" />
+                            <DataGridTextColumn Header="         Patient Name     " Binding="{Binding PatientName}" />
+                            <DataGridTextColumn Header="         Date Admitted   " Binding="{Binding DateAdmitted}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                    </ScrollViewer>
+                    <Button Content="Print" Click="PrintClicked" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,100"  Height="70" Width="130"/>
+
+                    <Button Content="Refresh" Click="RefreshClicked" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20" Height="70" Width="130"/>
+
+
+                    </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

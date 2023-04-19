@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital_PhysicianPatientDashboard", "Hospital_PhysicianPatientDashboard\Hospital_PhysicianPatientDashboard.csproj", "{193D84B4-9DC8-44C8-A19A-F4358E6C5282}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoomUtilDashboard", "RoomUtilDashboard\RoomUtilDashboard\RoomUtilDashboard.csproj", "{EF959978-9440-4F19-BB9C-DE2A270706CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{193D84B4-9DC8-44C8-A19A-F4358E6C5282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193D84B4-9DC8-44C8-A19A-F4358E6C5282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{193D84B4-9DC8-44C8-A19A-F4358E6C5282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193D84B4-9DC8-44C8-A19A-F4358E6C5282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF959978-9440-4F19-BB9C-DE2A270706CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF959978-9440-4F19-BB9C-DE2A270706CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF959978-9440-4F19-BB9C-DE2A270706CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF959978-9440-4F19-BB9C-DE2A270706CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B2E4B66-75A4-4947-A6B0-3172C69A2EB5}
+	EndGlobalSection
+EndGlobal
